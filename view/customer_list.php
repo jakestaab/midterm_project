@@ -3,6 +3,17 @@
 <section>
     <div class="tbl">
         <table>
+            <div>
+                <form>
+                    <input type="hidden" name="action" value="order_by">
+                    <label>Order By:</label>
+                        <select name="price_or_year">
+                            <option value="1">Price</option>
+                            <option value="2">Year</option>
+                        </select>
+                    <input class="categoryButton" type="submit" value="Submit" />
+                </form>
+            </div>
             <?php if(true) { ?>
                 <tr class="tableHeader">
                     <td>Year</td>
