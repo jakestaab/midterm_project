@@ -3,9 +3,33 @@
 <section>
     <div class="tbl">
         <table>
-            <div>
+            <div class="price_or_year">
                 <form>
                     <input type="hidden" name="action" value="order_by">
+                    <select name="make_id">
+                        <option value="">View All Makes</option>
+                        <?php foreach ($makes as $make) { ?>
+                            <option value="<?php echo $make['ID']; ?>">
+                                <?php echo $make['Make']; ?>
+                            </option>
+                        <?php } ?>
+                    </select>
+                    <select name="type_id">
+                        <option value="">View All Types</option>
+                        <?php foreach ($types as $type) { ?>
+                            <option value="<?php echo $type['ID']; ?>">
+                                <?php echo $type['Type']; ?>
+                            </option>
+                        <?php } ?>
+                    </select>
+                    <select name="class_id">
+                        <option value="">View All Classes</option>
+                        <?php foreach ($classes as $class) { ?>
+                            <option value="<?php echo $class['ID']; ?>">
+                                <?php echo $class['Class']; ?>
+                            </option>
+                        <?php } ?>
+                    </select>
                     <label>Order By:</label>
                         <select name="price_or_year">
                             <option value="1">Price</option>
