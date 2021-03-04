@@ -35,3 +35,67 @@ if ($action == 'list_inventory') {
     $class_id = filter_input(INPUT_GET, 'class_id', FILTER_VALIDATE_INT);
     header("Location: ?price_or_year=$price_or_year&make_id=$make_id&type_id=$type_id&class_id=$class_id");
 }
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+INSERT INTO vehicles
+(year, model, price, type_id, class_id, make_id)
+VALUES
+(2009, "Suburban", 18999, 1, 1, 1);
+
+INSERT INTO vehicles
+(year, model, price, type_id, class_id, make_id)
+VALUES
+(2011, "F150", 22999, 2, 1, 2);
+
+INSERT INTO vehicles
+(year, model, price, type_id, class_id, make_id)
+VALUES
+(2012, "Escalade", 24999, 1, 3, 3);
+
+INSERT INTO vehicles
+(year, model, price, type_id, class_id, make_id)
+VALUES
+(2018, "Rogue", 34999, 1, 2, 4);
+
+INSERT INTO vehicles
+(year, model, price, type_id, class_id, make_id)
+VALUES
+(2016, "Sonata", 29999, 3, 2, 5);
+
+INSERT INTO vehicles
+(year, model, price, type_id, class_id, make_id)
+VALUES
+(2020, "Challenger", 49999, 4, 4, 6);
+
+INSERT INTO vehicles
+(year, model, price, type_id, class_id, make_id)
+VALUES
+(2015, "Tahoe", 26999, 1, 1, 1);
+
+INSERT INTO vehicles
+(year, model, price, type_id, class_id, make_id)
+VALUES
+(2017, "QX80", 54999, 1, 3, 7);
+
+INSERT INTO vehicles
+(year, model, price, type_id, class_id, make_id)
+VALUES
+(2015, "Fusion", 19999, 3, 2, 2);
+
+INSERT INTO vehicles
+(year, model, price, type_id, class_id, make_id)
+VALUES
+(2014, "XTS", 19999, 3, 3, 3);
+
+*/

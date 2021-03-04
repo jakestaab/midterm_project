@@ -27,7 +27,7 @@ function get_vehicles($price_or_year, $make_id, $type_id, $class_id) {
     }
 
     $query = 'SELECT
-            vehicles.year, vehicles.model, vehicles.price,
+            vehicles.year, vehicles.model, vehicles.price, vehicles.v_num,
             types.Type, classes.Class, makes.Make
             FROM vehicles, types, classes, makes
             WHERE vehicles.type_id = types.ID
@@ -49,6 +49,16 @@ function get_vehicles($price_or_year, $make_id, $type_id, $class_id) {
     $vehicles = $statement->fetchAll();
     $statement->closeCursor();
     return $vehicles;
+}
+
+function delete_vehicle($v_num) {
+    global $db;
+    $query = 'DELETE FROM vehicles
+                WHERE v_num = :v_num;';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':v_num', $v_num);
+    $vehicle = $statement->execute();
+    $statement->closeCursor();
 }
 
 /*
