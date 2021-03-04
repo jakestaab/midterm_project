@@ -1,6 +1,5 @@
-<?php include '../view/header.php'; ?>
+<?php include 'header.php'; ?>
 <main>
-<h1>ADMIN</h1>
 <section>
     <div class="tbl">
         <table>
@@ -79,5 +78,11 @@
         <p>There are no vehicles in inventory.</p>
     <?php } ?><br><br>
 </div>
+<div class="tbl">  
+    <p><a href="?action=show_add_vehicle_form">Add Vehicles</a></p>
+    <p><a href="?action=show_makes_form">View/Edit Vehicle Makes</a></p>
+    <p><a href="?action=show_types_form">View/Edit Vehicle Types</a></p>
+    <p><a href="?action=show_classes_form">View/Edit Vehicle Classes</a></p>
+<div>
 </main>
 <?php include '../view/footer.php'; ?>

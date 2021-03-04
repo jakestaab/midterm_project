@@ -31,4 +31,15 @@ if ($action == 'list_inventory') {
     $v_num = filter_input(INPUT_POST, 'v_num', FILTER_VALIDATE_INT);
     delete_vehicle($v_num);
     header("Location: .?v_num=$v_num");
+} else if ($action == 'order_by') { //select_category
+    $price_or_year = filter_input(INPUT_GET, 'price_or_year', FILTER_VALIDATE_INT);
+    $make_id = filter_input(INPUT_GET, 'make_id', FILTER_VALIDATE_INT);
+    $type_id = filter_input(INPUT_GET, 'type_id', FILTER_VALIDATE_INT);
+    $class_id = filter_input(INPUT_GET, 'class_id', FILTER_VALIDATE_INT);
+    header("Location: ?price_or_year=$price_or_year&make_id=$make_id&type_id=$type_id&class_id=$class_id");
+} else if ($action == 'show_add_vehicle_form') {
+    $makes = get_makes();
+    $types = get_types();
+    $classes = get_class_name();
+    include('./view/add_vehicle.php');
 }

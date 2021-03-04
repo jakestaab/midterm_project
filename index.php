@@ -25,7 +25,6 @@ if ($action == 'list_inventory') {
     $class_id = filter_input(INPUT_GET, 'class_id', FILTER_VALIDATE_INT);
     $classes = get_class_name();
 
-
     $vehicles = get_vehicles($price_or_year, $make_id, $type_id, $class_id);
     include('view/customer_list.php');
 } else if ($action == 'order_by') { //select_category

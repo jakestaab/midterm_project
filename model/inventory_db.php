@@ -61,26 +61,19 @@ function delete_vehicle($v_num) {
     $statement->closeCursor();
 }
 
-/*
-else if ($type_id != NULL || $type_id != FALSE) {
-    $query = 'SELECT
-            vehicles.year, vehicles.model, vehicles.price,
-            types.Type, classes.Class, makes.Make
-            FROM vehicles, types, classes, makes
-            WHERE vehicles.type_id = types.ID
-            AND vehicles.class_id = classes.ID
-            AND vehicles.make_id = makes.ID
-            AND vehicles.type_id = :type_id
-            ORDER BY price DESC;';
+function add_vehicle($year, $model, $price, $type_id, $class_id, $make_id) {
+    global $db;
+    $query = 'INSERT INTO vehicles
+                (year, model, price, type_id, class_id, make_id)
+                VALUES
+                (:year, :model, :price, :type_id, :class_id, :make_id);';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':year', $year);
+    $statement->bindValue(':model', $model);
+    $statement->bindValue(':price', $price);
+    $statement->bindValue(':type_id', $type_id);
+    $statement->bindValue(':class_id', $class_id);
+    $statement->bindValue(':make_id', $make_id);
+    $vehicle = $statement->execute();
+    $statement->closeCursor();
 }
-} else {
-$query = 'SELECT
-        vehicles.year, vehicles.model, vehicles.price,
-        types.Type, classes.Class, makes.Make
-        FROM vehicles, types, classes, makes
-        WHERE vehicles.type_id = types.ID
-        AND vehicles.class_id = classes.ID
-        AND vehicles.make_id = makes.ID
-        ORDER BY price DESC;';
-}
-*/
