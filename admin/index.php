@@ -42,4 +42,7 @@ if ($action == 'list_inventory') {
     $types = get_types();
     $classes = get_class_name();
     include('./view/add_vehicle.php');
+} else if ($action == 'show_add_make_form') {
+    $makes = get_makes();
+    include ('./view/add_make.php');
 }
