@@ -16,8 +16,18 @@ if ($action == 'add_make') {
     $make = filter_input(INPUT_POST, "make", FILTER_SANITIZE_STRING);
     add_make($make);
     header("Location: ..");
-} if ($action == 'delete_make') {
+} else if ($action == 'delete_make') {
     $makeID = filter_input(INPUT_POST, 'makeID', FILTER_VALIDATE_INT);
-    delete_make($makeID);
+    if ($makeID) {
+        try {
+            delete_make($makeID);
+        } catch (PDOException $e) {
+            $e = "You cannot delete a make if vehicles are attached to that make.";
+            include('../view/error.php');
+            exit();
+        }
+        header("Location: ..");
+    }
+    $makeID = filter_input(INPUT_POST, 'makeID', FILTER_VALIDATE_INT);
     header("Location: ..");
 }

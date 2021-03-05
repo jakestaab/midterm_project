@@ -38,13 +38,9 @@ function get_vehicles($price_or_year, $make_id, $type_id, $class_id) {
     $statement = $db->prepare($query . $m . $t . $c . $order);
     if($make_id != NULL || $make_id != FALSE) {
         $statement->bindValue(':make_id', $make_id);
-    } else {
-        $statement->bindValue('None', $make_id);
     }
     if($type_id != NULL || $type_id != FALSE) {
         $statement->bindValue(':type_id', $type_id);
-    } else {
-        $statement->bindValue('None', $type_id);
     }
     if($class_id != NULL || $class_id != FALSE) {
         $statement->bindValue(':class_id', $class_id);

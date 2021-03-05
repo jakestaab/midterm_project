@@ -18,6 +18,15 @@ if ($action == 'add_type') {
     header("Location: ..");
 } if ($action == 'delete_type') {
     $typeID = filter_input(INPUT_POST, 'typeID', FILTER_VALIDATE_INT);
-    delete_type($typeID);
+    if ($typeID) {
+        try {
+            delete_type($typeID);
+        } catch (PDOException $e) {
+            $e = "You cannot delete a type if vehicles are attached to that type.";
+            include('../view/error.php');
+            exit();
+        }
+        header("Location: ..");
+    }
     header("Location: ..");
 }

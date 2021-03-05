@@ -18,6 +18,15 @@ if ($action == 'add_class') {
     header("Location: ..");
 } if ($action == 'delete_class') {
     $classID = filter_input(INPUT_POST, 'classID', FILTER_VALIDATE_INT);
-    delete_class($classID);
+    if ($classID) {
+        try {
+            delete_class($classID);
+        } catch (PDOException $e) {
+            $e = "You cannot delete a class if vehicles are attached to that class.";
+            include('../view/error.php');
+            exit();
+        }
+        header("Location: ..");
+    }
     header("Location: ..");
 }
