@@ -44,4 +44,7 @@ if ($action == 'list_inventory') {
 } else if ($action == 'show_add_type_form') {
     $types = get_types();
     include ('./view/add_type.php');
+} else if ($action == 'show_add_class_form') {
+    $classes = get_class_name();
+    include('./view/add_class.php');
 }
