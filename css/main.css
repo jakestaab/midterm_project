@@ -1,0 +1,121 @@
+
+main {
+    font-family: arial;
+}
+
+header {
+    border-bottom: 3px solid black;
+    padding-left: 2%;
+}
+
+footer {
+    border-top: 3px solid black;
+    padding-left: 2%;
+}
+
+.delete {
+    background-color: rgb(221, 63, 0);
+    color: white;
+    height: 25px;
+    border-color:rgb(0, 0, 0);
+    border-radius: 4px;
+    box-shadow: 2px 2px rgb(156, 156, 156);
+}
+
+.add {
+    background-color: rgb(44, 52, 168);
+    color: white;
+    height: 50px;
+}
+
+.categoryButton {
+    background-color: rgb(44, 52, 168);
+    color: white;
+    height: 25px;
+    border-color:rgb(0, 0, 0);
+    border-radius: 4px;
+    box-shadow: 2px 2px rgb(156, 156, 156);
+}
+
+.selectCategory {
+    padding-bottom: 15px;
+}
+
+.tableHeader {
+    font-weight: bold;
+    font-size: 125%;
+    color: rgb(44, 52, 168);
+}
+
+.title {
+    font-weight: bold;
+    font-size: 115%;
+}
+
+.desc {
+    color: grey;
+}
+
+table {
+    table-layout: fixed;
+    width: 75%;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.categoryTable {
+    table-layout: fixed;
+    width: 35%;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.tbl {
+    padding-left: 2%;
+}
+
+.ctgtbl {
+    padding-left: 2%;
+    width: 75%;
+}
+
+tr {
+    width: 55%;
+    border: solid;
+    border-width: 1px 0;
+}
+
+table td {
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 4px;
+    border: 1px solid black;
+}
+
+table td:first-child {
+    width: 20%;
+    text-align: left;
+}
+
+.additem {
+    padding-top: 5px;
+}
+
+.listlabel {
+    color: rgb(44, 52, 168);
+    font-weight: bold;
+    font-size: 175%;
+}
+
+.addlabel {
+    color: rgb(177, 97, 32);
+    font-weight: bold;
+    font-size: 150%;
+}
+
+#newitems {
+    height: 30px;
+    width: 74%;
+    margin-bottom: 10px;
+}
