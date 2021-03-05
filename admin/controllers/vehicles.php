@@ -22,4 +22,8 @@ if ($action == 'add_vehicle') {
 
     add_vehicle($year, $model, $price, $type_id, $class_id, $make_id);
     header("Location: ..");
+} else if ($action == 'delete_vehicle') { //delete_vehicle
+    $v_num = filter_input(INPUT_POST, 'v_num', FILTER_VALIDATE_INT);
+    delete_vehicle($v_num);
+    header("Location: ..");
 }

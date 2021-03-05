@@ -6,33 +6,33 @@
         <table>
             <?php if(true) { ?>
                 <tr class="tableHeader">
-                    <td>Make</td>
+                    <td>Type</td>
                 </tr>
-            <?php foreach($makes as $make) {
-                $makeID = $make['ID'];
-                $makeName = $make['Make'];
+            <?php foreach($types as $type) {
+                $typeID = $type['ID'];
+                $typeName = $type['Type'];
             ?>
             <tr>
-                <td><?php echo $makeName; ?></td>
+                <td><?php echo $typeName; ?></td>
                 <td>
-                    <form action="controllers/makes.php" method="POST">
-                        <input type="hidden" name="action" value="delete_make">
-                        <input type="hidden" name="makeID" value="<?php echo $makeID ?>">
+                    <form action="controllers/types.php" method="POST">
+                        <input type="hidden" name="action" value="delete_type">
+                        <input type="hidden" name="typeID" value="<?php echo $typeID ?>">
                         <button class="delete">Delete</button>
                     </form>
                 </td>
             </tr>
             <?php } ?>
             <?php } else { ?>
-            <p>No makes</p>
+            <p>No types</p>
             <?php } ?>
         </table><br>
             <div class="">
-                <h2>Add New Make</h2>
-                <form action="controllers/makes.php" method="POST">
-                    <input type="hidden" name="action" value="add_make">
+                <h2>Add New Type</h2>
+                <form action="controllers/types.php" method="POST">
+                    <input type="hidden" name="action" value="add_type">
                     <div>
-                        <input type="text" id="newitems" name="make"
+                        <input type="text" id="newitems" name="type"
                             placeholder="Name" style="width: 275px;" required /><br>
                     </div>
                     <input class="categoryButton" type="submit" value="Submit" />

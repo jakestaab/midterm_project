@@ -64,7 +64,7 @@
                 <td><?php echo $class; ?></td>
                 <td><?php echo $price; ?></td>
                 <td>
-                    <form action="." method="POST">
+                    <form action="controllers/vehicles.php" method="POST">
                         <input type="hidden" name="action" value="delete_vehicle">
                         <input type="hidden" name="v_num" value="<?php echo $v_num ?>">
                         <button class="delete">Delete</button>
@@ -81,8 +81,8 @@
 <div class="tbl">  
     <p><a href="?action=show_add_vehicle_form">Add Vehicles</a></p>
     <p><a href="?action=show_add_make_form">View/Edit Vehicle Makes</a></p>
-    <p><a href="?action=show_types_form">View/Edit Vehicle Types</a></p>
-    <p><a href="?action=show_classes_form">View/Edit Vehicle Classes</a></p>
+    <p><a href="?action=show_add_type_form">View/Edit Vehicle Types</a></p>
+    <p><a href="?action=show_add_class_form">View/Edit Vehicle Classes</a></p>
 <div>
 </main>
 <?php include '../view/footer.php'; ?>

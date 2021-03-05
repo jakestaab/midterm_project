@@ -47,9 +47,9 @@
 </div>
 <div class="tbl">  
     <p><a href="?action=list_inventory">Vehicle Inventory</a></p>
-    <p><a href="?action=show_makes_form">View/Edit Vehicle Makes</a></p>
-    <p><a href="?action=show_types_form">View/Edit Vehicle Types</a></p>
-    <p><a href="?action=show_classes_form">View/Edit Vehicle Classes</a></p>
+    <p><a href="?action=show_add_make_form">View/Edit Vehicle Makes</a></p>
+    <p><a href="?action=show_add_type_form">View/Edit Vehicle Types</a></p>
+    <p><a href="?action=show_add_class_form">View/Edit Vehicle Classes</a></p>
 <div>
 </main>
 <?php include '../view/footer.php'; ?>

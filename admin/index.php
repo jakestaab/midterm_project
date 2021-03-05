@@ -27,11 +27,7 @@ if ($action == 'list_inventory') {
 
     $vehicles = get_vehicles($price_or_year, $make_id, $type_id, $class_id);
     include('view/admin_list.php');
-} else if ($action == 'delete_vehicle') { //delete_vehicle
-    $v_num = filter_input(INPUT_POST, 'v_num', FILTER_VALIDATE_INT);
-    delete_vehicle($v_num);
-    header("Location: .?v_num=$v_num");
-} else if ($action == 'order_by') { //select_category
+} else if ($action == 'order_by') { //order_by
     $price_or_year = filter_input(INPUT_GET, 'price_or_year', FILTER_VALIDATE_INT);
     $make_id = filter_input(INPUT_GET, 'make_id', FILTER_VALIDATE_INT);
     $type_id = filter_input(INPUT_GET, 'type_id', FILTER_VALIDATE_INT);
@@ -45,4 +41,7 @@ if ($action == 'list_inventory') {
 } else if ($action == 'show_add_make_form') {
     $makes = get_makes();
     include ('./view/add_make.php');
+} else if ($action == 'show_add_type_form') {
+    $types = get_types();
+    include ('./view/add_type.php');
 }
