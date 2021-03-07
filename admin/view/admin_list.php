@@ -3,8 +3,9 @@
 <section>
     <div class="tbl">
         <table>
-            <div class="price_or_year">
+            <div class="">
                 <form>
+                <label>Filter by:</label><br>
                     <input type="hidden" name="action" value="order_by">
                     <select name="make_id">
                         <option value="">View All Makes</option>
@@ -30,7 +31,6 @@
                             </option>
                         <?php } ?>
                     </select>
-                    <label>Order By:</label>
                         <select name="price_or_year">
                             <option value="1">Price</option>
                             <option value="2">Year</option>
@@ -73,6 +73,7 @@
             </tr>
             <?php } ?>
         </table>
+    </div>
 </section>
     <?php } else { ?>
         <p>There are no vehicles in inventory.</p>

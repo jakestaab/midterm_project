@@ -57,20 +57,17 @@ footer {
 }
 
 table {
-    table-layout: fixed;
-    width: 75%;
+    table-layout: auto;
+    width: 1000px;
+    height: 100%;
     border: 1px solid black;
     border-collapse: collapse;
 }
 
-.categoryTable {
-    table-layout: fixed;
-    width: 35%;
-    border: 1px solid black;
-    border-collapse: collapse;
-}
 
 .tbl {
+    overflow-x: auto;
+    overflow-y: auto;
     padding-left: 2%;
 }
 
@@ -80,7 +77,6 @@ table {
 }
 
 tr {
-    width: 55%;
     border: solid;
     border-width: 1px 0;
 }
@@ -91,11 +87,6 @@ table td {
     padding-bottom: 10px;
     padding-left: 4px;
     border: 1px solid black;
-}
-
-table td:first-child {
-    width: 20%;
-    text-align: left;
 }
 
 .additem {

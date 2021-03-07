@@ -3,7 +3,7 @@
 function get_makes() {
     global $db;
     $query = 'SELECT * FROM makes
-                    ORDER BY ID;';
+                    ORDER BY Make;';
 
     $statement = $db->prepare($query);
     $statement->execute();
