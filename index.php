@@ -33,4 +33,17 @@ if ($action == 'list_inventory') {
     $type_id = filter_input(INPUT_GET, 'type_id', FILTER_VALIDATE_INT);
     $class_id = filter_input(INPUT_GET, 'class_id', FILTER_VALIDATE_INT);
     header("Location: ?price_or_year=$price_or_year&make_id=$make_id&type_id=$type_id&class_id=$class_id");
+} else if ($action == 'register') {
+    $firstname = filter_input(INPUT_GET, 'firstname', FILTER_SANITIZE_STRING);
+
+    if(isset($firstname)) {
+        session_start();
+        $_SESSION['userid'] = $firstname;
+        $username = $_SESSION['userid'];
+    }
+
+    include('view/register.php');
+} else if ($action == 'logout') {
+    include('view/logout.php');
 }
+

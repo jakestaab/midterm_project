@@ -6,6 +6,7 @@ main {
 header {
     border-bottom: 3px solid black;
     padding-left: 2%;
+    font-family: arial;
 }
 
 footer {
@@ -102,11 +103,22 @@ table td {
 .addlabel {
     color: rgb(177, 97, 32);
     font-weight: bold;
-    font-size: 150%;
+    font-size: 175%;
 }
 
 #newitems {
     height: 30px;
     width: 74%;
     margin-bottom: 10px;
+}
+
+.lrgtxt {
+    font-size: 150%;
+    font-family: arial;
+    float: right;
+}
+
+.register {
+    font-size: 150%;
+    font-family: arial;
 }
