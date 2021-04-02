@@ -4,6 +4,7 @@ require('../model/inventory_db.php');
 require('../model/make_db.php');
 require('../model/type_db.php');
 require('../model/class_db.php');
+require('../model/admin_db.php');
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
@@ -47,4 +48,6 @@ if ($action == 'list_inventory') {
 } else if ($action == 'show_add_class_form') {
     $classes = get_class_name();
     include('./view/add_class.php');
+} else if ($action == 'show_register') {
+    include('./view/register.php');
 }
