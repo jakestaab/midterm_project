@@ -16,8 +16,6 @@ if ($action == NULL) {
 
 if (!isset($_SESSION['is_valid_admin'])) {
     $action = 'login';
-} else {
-    $action = 'list_inventory';
 }
 
 if ($action == 'list_inventory') {

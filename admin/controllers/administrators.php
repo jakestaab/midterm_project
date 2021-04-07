@@ -21,13 +21,15 @@ $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
     if ($action == NULL) {
-        $action = 'show_admin_menu';
+        $action = 'list_inventory';
     }
 }
 
 
 if (!isset($_SESSION['is_valid_admin'])) {
     $action = 'login';
+} else if (isset($_SESSION['is_valid_admin']) && $action == 'order_by') {
+    include('../view/admin_list.php');
 }
 
 
@@ -61,6 +63,22 @@ if ($action == 'register') {
         $login_message = 'You must login to view this page.';
         include('../view/login.php');
     }
-} else if ($action == NULL || $action == FALSE) {
-    header("Location: ../index.php");
+} else if ($action == 'logout') {
+    include('../view/logout.php');
+} else if ($action == 'list_inventory') {
+    include('../view/admin_list.php');
+} else if ($action == 'show_add_vehicle_form') {
+    $makes = get_makes();
+    $types = get_types();
+    $classes = get_class_name();
+    include('../view/add_vehicle.php');
+} else if ($action == 'show_add_make_form') {
+    $makes = get_makes();
+    include ('../view/add_make.php');
+} else if ($action == 'show_add_type_form') {
+    $types = get_types();
+    include ('../view/add_type.php');
+} else if ($action == 'show_add_class_form') {
+    $classes = get_class_name();
+    include('../view/add_class.php');
 }

@@ -2,6 +2,7 @@
 <main>
 <section>
     <div class="tbl">
+        <p><?php echo $login_message ?></p><br>
         <p>Please fill in your credentials to login.</p>
         <?php if (true) { ?> <!--need to remember to change this -->
             <div class="">
