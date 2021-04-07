@@ -1,6 +1,8 @@
 <?php
 require('../../model/database.php');
 require('../../model/make_db.php');
+require_once('../util/valid_admin.php');
+
 
 
 $action = filter_input(INPUT_POST, 'action');

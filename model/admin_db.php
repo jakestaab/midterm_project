@@ -9,7 +9,7 @@ function add_admin($username, $password) {
 
     $statement = $db->prepare($query);
     $statement->bindValue(':username', $username);
-    $statement>bindValue(':password', $hash);
+    $statement->bindValue(':password', $hash);
     $statement->execute();
     $statement->closeCursor();
 }
@@ -24,13 +24,8 @@ function username_exists($username) {
     $statement->execute();
     $exists = $statement->fetch();
     $statement->closeCursor();
-    
-    if($exists == 0) {
-        return false;
-    }
-    else {
-        return true;
-    }
+
+    return $exists;
 }
 
 
@@ -44,6 +39,10 @@ function is_valid_admin_login($username, $password) {
     $statement->execute();
     $row = $statement->fetch();
     $statement->closeCursor();
-    $hash = $row['password'];
+    if ($row == NULL) {
+        $hash = NULL;
+    } else {
+        $hash = $row['password'];
+    }
     return password_verify($password, $hash);
 }

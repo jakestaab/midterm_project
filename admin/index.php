@@ -14,6 +14,12 @@ if ($action == NULL) {
     }
 }
 
+if (!isset($_SESSION['is_valid_admin'])) {
+    $action = 'login';
+} else {
+    $action = 'list_inventory';
+}
+
 if ($action == 'list_inventory') {
     $price_or_year = filter_input(INPUT_GET, 'price_or_year', FILTER_VALIDATE_INT);
 
@@ -48,6 +54,7 @@ if ($action == 'list_inventory') {
 } else if ($action == 'show_add_class_form') {
     $classes = get_class_name();
     include('./view/add_class.php');
-} else if ($action == 'show_register') {
-    include('./view/register.php');
+} else if ($action == 'login' || $action == 'show_login' || $action == 'register'
+            || $action = 'show_register' || $action == 'logout') {
+    header("Location: controllers/administrators.php");
 }

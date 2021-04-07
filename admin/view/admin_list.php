@@ -1,5 +1,6 @@
 <?php include 'header.php'; ?>
 <main>
+<?php if (isset($_SESSION['is_valid_admin'])) { ?>
 <section>
     <div class="tbl">
         <table>
@@ -79,6 +80,9 @@
         <p>There are no vehicles in inventory.</p>
     <?php } ?><br><br>
 </div>
+<?php } else { ?>
+<p><?php echo $login_message; ?></p>
+<?php } ?>
 
 </main>
 <?php include 'footer.php'; ?>

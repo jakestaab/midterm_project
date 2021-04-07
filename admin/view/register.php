@@ -5,12 +5,12 @@
         <p>Register a new admin user</p>
         <?php if (isset($errors)) { ?>
         <?php foreach ($errors as $error) { ?>
-            <p><?php echo $error?></p>
+            <p><?php echo $error; ?></p>
         <?php } ?>
         <?php } ?>
         <?php if (true) { ?> <!--need to remember to change this -->
             <div class="">
-                <form action="controllers/administrators.php" method="GET">
+                <form action="" method="POST">
                     <input type="hidden" name="action" value="register">
                     <div class="register">
                         <label>Username:</label><br>

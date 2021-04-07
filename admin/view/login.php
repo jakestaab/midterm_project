@@ -1,11 +1,11 @@
-
+<?php include 'header.php'; ?>
 <main>
 <section>
     <div class="tbl">
         <p>Please fill in your credentials to login.</p>
         <?php if (true) { ?> <!--need to remember to change this -->
             <div class="">
-                <form action="controllers/administrators.php" method="GET">
+                <form action="administrators.php" method="POST">
                     <input type="hidden" name="action" value="login">
                     <div class="register">
                         <label>Username:</label><br>

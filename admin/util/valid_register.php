@@ -1,4 +1,7 @@
-<?php 
+<?php
+
+require_once('../../model/admin_db.php');
+
     function valid_username($username) {
         // Ternary Statement pg.245
         return (!$username || strlen($username) < 6) ? false : true;
@@ -23,7 +26,7 @@
         if (!valid_username($username)) {
             array_push($errors, "Username must be six characters or longer.");
         }
-        if (username_exists($username)) {
+        if (username_exists($username)[0]) {
             array_push($errors, "The username you entered is already taken.");
         }
 
