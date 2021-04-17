@@ -14,13 +14,13 @@ if ($action == NULL) {
 
 if ($action == 'add_type') {
     $type = filter_input(INPUT_POST, "type", FILTER_SANITIZE_STRING);
-    add_type($type);
+    TypeDB::add_type($type);
     header("Location: ..");
 } if ($action == 'delete_type') {
     $typeID = filter_input(INPUT_POST, 'typeID', FILTER_VALIDATE_INT);
     if ($typeID) {
         try {
-            delete_type($typeID);
+            TypeDB::delete_type($typeID);
         } catch (PDOException $e) {
             $e = "You cannot delete a type if vehicles are attached to that type.";
             include('../view/error.php');

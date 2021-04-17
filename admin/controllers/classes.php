@@ -14,13 +14,13 @@ if ($action == NULL) {
 
 if ($action == 'add_class') {
     $class = filter_input(INPUT_POST, "class", FILTER_SANITIZE_STRING);
-    add_class($class);
+    ClassDB::add_class($class);
     header("Location: ..");
 } if ($action == 'delete_class') {
     $classID = filter_input(INPUT_POST, 'classID', FILTER_VALIDATE_INT);
     if ($classID) {
         try {
-            delete_class($classID);
+            ClassDB::delete_class($classID);
         } catch (PDOException $e) {
             $e = "You cannot delete a class if vehicles are attached to that class.";
             include('../view/error.php');
